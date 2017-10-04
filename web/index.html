@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--JS-->
+        <script type="text/javascript" src="js/plugins/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/plugins/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/roles.js"></script>
+        <!--CS-->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+
+    </head>
+    <body>
+        <div class="row">
+        	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        		<form id="frmRole" method="POST">
+        			<div class="form-group">
+        				<div class="input-group">
+        					<span class="input-group-addon glyphicon glyphicon-text-color">
+        				
+        					</span>
+        					<input class="form-control" id="rolename" type="text" name="rolename" placeholder="Nombre del rol">
+        				</div>
+        			</div>
+        			<div align="right">
+        				<button type="submit" class="btn btn-primary">
+                                            <span class="glyphicon glyphicon-education"> Guardar </span>
+        				</button>
+        			</div>
+        		</form>
+        	</div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            	<table id="tbroles" class="table">  
+            		<thead>
+            			<tr>
+            				<th>Clave</th>
+            				<th>Rol</th>
+            				<th>Operaciones</th>
+            			</tr>
+            		</thead>
+            	</table>
+            </div>
+        </div>  
+    </body>
+</html>
