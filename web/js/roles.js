@@ -44,9 +44,35 @@ $(function(){
         },
 //        Comportamiento al precionar el boton
         submitHandler: function(form){
-            console.log("Al 1,000,000 viejon!!!");
+            //console.log("Al 1,000,000 viejon!!!");
+            newRole();
             return false;
         }
     });
     
 })  ;
+
+function newRole() {
+    //Parametro: Objeto de Javascript
+    $.ajax({
+        url: 'CrearRol', //Petición al servlet, este paramétro es una URL relativa para este ejemplo
+        type: 'post', //Método que hará la peticion
+        data: $('#frmRole').serialize() //Propiedad encarga de enviar datos, 
+                //en esta situación se asocia el formulario encargado del registro
+                /*data:{ rolename:$('#rolename').value } Otra forma de enviar parámetros*/
+    }).done(//Si todo ocurre de forma correcta
+            function (data) {//Respuesta de la peticion (JSon)                
+                //Usando Growl
+                $.growl.notice({
+                    title: 'Exitoso',
+                    message: data.message
+                });//Titulo, Contenido
+                $("#rolename").val('');//Limpiando el input
+            })
+            .fail(function (data) {//Si existió algun fallo //Data:Respuesta de la peticion (JSon)                
+                $.growl.error({
+                    title: 'Error!!',
+                    message: data.message
+                });
+            })
+}
